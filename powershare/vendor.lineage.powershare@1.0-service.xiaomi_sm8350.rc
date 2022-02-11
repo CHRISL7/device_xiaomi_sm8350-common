@@ -1,4 +1,4 @@
- on boot 
+on boot 
     chown system system /sys/class/qcom-battery/reverse_chg_mode
     chmod 0644 /sys/class/qcom-battery/reverse_chg_mode
 
