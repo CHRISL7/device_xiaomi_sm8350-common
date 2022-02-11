@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from haydn V12.5.4.0.RKKEUXM_20210722.0000.00
+# All unpinned blobs below are extracted from renoir MIUI V12.5.7.0.RKIMIXM package
 
 # ADSP
 vendor/bin/adsprpcd
@@ -6,6 +6,12 @@ vendor/bin/loadalgo
 vendor/etc/init/vendor.qti.adsprpc-guestos-service.rc
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libloadalgo_stub.so
+
+# ANT+
+vendor/lib/com.dsi.ant@1.0.so
+vendor/lib/hw/com.dsi.ant@1.0-impl.so
+vendor/lib64/com.dsi.ant@1.0.so
+vendor/lib64/hw/com.dsi.ant@1.0-impl.so
 
 # Audio
 vendor/lib/libacdb-fts.so
@@ -887,6 +893,9 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.1.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.2.so
 vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0.so
+
+# Mtd service
+vendor/lib64/vendor.xiaomi.hardware.mtdservice@1.0.so
 
 # Secure element
 vendor/bin/hw/vendor.qti.secure_element@1.2-service
