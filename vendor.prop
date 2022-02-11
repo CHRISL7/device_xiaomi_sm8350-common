@@ -293,6 +293,10 @@ persist.vendor.sensors.sync_request=true
 # SKU
 ro.boot.product.vendor.sku=lahaina
 
+# SoC
+ro.soc.manufacturer=QTI
+ro.soc.model=SM7350
+
 # Storage
 ro.incremental.enable=yes
 
