@@ -20,6 +20,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 # Enable project quotas and casefolding for emulated storage without sdcardfs
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
+# Device configs makefiles
+$(call inherit-product, $(LOCAL_PATH)/configs/hidl_vendor.mk)
+
 # Inherit proprietary targets
 $(call inherit-product-if-exists, vendor/xiaomi/sm8350-common/sm8350-common-vendor.mk)
 
@@ -112,11 +115,8 @@ PRODUCT_PACKAGES += \
     BluetoothQti
 
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth.audio@2.0-impl \
-    com.dsi.ant@1.0.vendor \
-    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
-    vendor.qti.hardware.btconfigstore@1.0.vendor \
-    vendor.qti.hardware.btconfigstore@2.0.vendor
+    android.hardware.bluetooth@1.0 \
+    android.hardware.bluetooth.audio@2.0-impl
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
@@ -140,8 +140,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service_64 \
     libcamera2ndk_vendor \
-    libgui_vendor \
-    vendor.qti.hardware.camera.postproc@1.0.vendor
+    libgui_vendor
 
 PRODUCT_PACKAGES += \
     Snap
@@ -159,16 +158,7 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
     vendor.qti.hardware.display.allocator-service \
-    vendor.qti.hardware.display.composer-service \
-    vendor.qti.hardware.display.mapper@1.0.vendor \
-    vendor.qti.hardware.display.mapper@1.1.vendor \
-    vendor.qti.hardware.display.mapper@2.0.vendor \
-    vendor.qti.hardware.display.mapper@3.0.vendor \
-    vendor.qti.hardware.display.mapper@4.0.vendor
-
-PRODUCT_PACKAGES += \
-    vendor.display.config@1.15.vendor \
-    vendor.display.config@2.0.vendor
+    vendor.qti.hardware.display.composer-service
 
 PRODUCT_PACKAGES += \
     libdisplayconfig.qti \
@@ -223,9 +213,7 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    android.hidl.base@1.0.vendor \
-    android.hidl.manager@1.0 \
-    android.hidl.manager@1.0.vendor
+    android.hidl.manager@1.0
 
 PRODUCT_PACKAGES += \
     libhidltransport \
@@ -301,8 +289,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libavservices_minijail \
     libavservices_minijail.vendor \
-    libavservices_minijail_vendor \
-    libcodec2_hidl@1.1.vendor
+    libavservices_minijail_vendor
 
 # Network
 PRODUCT_COPY_FILES += \
@@ -356,8 +343,7 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti \
-    vendor.qti.hardware.perf@2.2.vendor
+    android.hardware.power-service-qti
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
@@ -397,10 +383,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
-
-# Servicetracker
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.servicetracker@1.2.vendor
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
