@@ -19,6 +19,11 @@ vendor/lib/libqtigef.so
 vendor/lib/libssrec.so
 vendor/lib64/libadsprpc.so
 
+# Audio Dirac
+lib/libDiracAPI_SHARED.so:vendor/lib/libDiracAPI_SHARED.so
+lib/soundfx/libdirac.so:vendor/lib/soundfx/libdirac.so
+vendor/etc/diracmobile.config
+
 # Audio FX modules
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libqcbassboost.so
