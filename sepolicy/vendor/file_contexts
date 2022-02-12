@@ -11,6 +11,9 @@
 # Camera
 /mnt/vendor/persist/camera(/.*)?   u:object_r:camera_persist_file:s0
 
+# FPS Info
+/sys/class/drm/sde-crtc-0/measured_fps                               u:object_r:vendor_sysfs_graphics:s0
+
 # IR
 /dev/ir_spi                                      u:object_r:ir_spi_device:s0
 
